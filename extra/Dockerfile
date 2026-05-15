@@ -41,7 +41,7 @@ WORKDIR /home/nonroot
 ENV PATH=$PATH:/home/nonroot/.cargo/bin:/home/nonroot/.local/bin
 RUN wget -qO- https://sh.rustup.rs | sh -s -- -y -q --no-modify-path && rustup default stable
 
-RUN git clone --branch wip-structured-fuzzing --depth=1 https://github.com/xen-troops/xen-fuzzer-rs.git && \
+RUN git clone --branch wip-structured-fuzzing --depth=1 https://github.com/dimaprkp4k/xen-fuzzer-rs.git && \
   git clone --branch RELEASE-4.21.1 --depth=1 https://gitlab.com/xen-project/xen.git && \
   cd xen-fuzzer-rs && cargo install cargo-make && \
   XTF_URL=https://github.com/lorc/xtf.git XTF_REV=structured-fuzzing cargo make build_xtf && \
