@@ -309,7 +309,7 @@ impl XenCov {
     pub fn hacky_save() -> () {
 	// Determine next free file and save data
 	for idx in 0..100000 {
-	    let fname = format!("/home/lorc/mnt/ssd/xen_fuzz/xen_fuzzer/gcov_reports/{idx:0>5}.cov");
+	    let fname = format!("/builds/rec-fusa/xen/gcov_reports/{idx:0>5}.cov");
 	    if !std::fs::exists(&fname).expect("Can't check for existence") {
 		println!("Saved gcov into {fname}");
 		std::fs::write(&fname, xencov_map_data_slice()).expect("Failed to hacky write coverage data");
